@@ -45,8 +45,8 @@ var tl = gsap.timeline({
         trigger: ".page1 h1",
         scroller: ".main",
         // markers:true,
-        start: "top 27%",
-        end: "top 0",
+        start: "top 100%",
+        end: "top 0%",
         scrub: 3
     }
 })
@@ -59,20 +59,53 @@ tl.to(".page1 h2", {
 tl.to(".page1 video", {
     width: "90%"
 }, "anim")
+if(window.innerWidth<992){
+    var tl2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".page1 h1",
+            scroller: ".main",
+            // markers:true,
+            start: "top -45%",
+            end: "top -60%",
+            scrub: 3
+        }
+    })
+    tl2.to(".main", {
+        backgroundColor: "#fff",
+    })
+}
+else if(window.innerWidth<600){
+    var tl2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".page1 h1",
+            scroller: ".main",
+            // markers:true,
+            start: "top -25%",
+            end: "top -40%",
+            scrub: 3
+        }
+    })
+    tl2.to(".main", {
+        backgroundColor: "#fff",
+    })
+}
+else{
+    var tl2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".page1 h1",
+            scroller: ".main",
+            // markers:true,
+            start: "top -115%",
+            end: "top -120%",
+            scrub: 3
+        }
+    })
+    tl2.to(".main", {
+        backgroundColor: "#fff",
+    })
+}
 
-var tl2 = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".page1 h1",
-        scroller: ".main",
-        // markers:true,
-        start: "top -115%",
-        end: "top -120%",
-        scrub: 3
-    }
-})
-tl2.to(".main", {
-    backgroundColor: "#fff",
-})
+
 
 var tl3 = gsap.timeline({
     scrollTrigger: {
